@@ -1,0 +1,6 @@
+<root>
+  <name>@name@</name>
+  <title>@title@</title>
+  <revision>@build.number@</revision>
+  <language>en</language>
+</root>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<payment-page language-code="en" resources-base-url="resources/">
+
+    <merchant 
+    	pcid="4AE6D1DC62E1A28A0F9522920E76C58B"
+        title="Test Merchant"
+        url="http://testmerchant.ru"
+        logo-url="resources/logo.gif"/>
+
+    <purchase desc="ISBN: 1445233434-45, 4457216346-42"/>
+
+    <payment-details 
+    	payment-type="card"
+        account-id="41E0B211B70623C84AE2ABF2892D578B"
+        display-amount="$23.85"
+        transaction-id="1DAC234A" 
+        payment-date="05.06.2005 12:37"
+        stage="payment_result">
+    </payment-details>
+
+    <!--success=0 fail=1 user canceled=54-->
+    <payment-result result-code="1" trx-extended-code="54" back-url="page-1a.html">
+    	<payment-schema-result>
+            <param name="CardPaymentSchema.CARDHOLDER" value="Vasily Pupkin"/>
+            <param name="CardPaymentSchema.MASKED_PAN" value="12XXXXXXXXX123"/>
+            <param name="CardPaymentSchema.EXPIRY" value="12/12"/>
+            <param name="CardPaymentSchema.CARD_TYPE" value="Visa"/>
+            <param name="CardPaymentSchema.RESULT_CODE" value="00"/>
+            <param name="CardPaymentSchema.RESPONSE_CODE" value="1235"/>
+		</payment-schema-result>
+    </payment-result>
+
+</payment-page>

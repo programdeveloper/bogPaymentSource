@@ -1,0 +1,112 @@
+<project name="pcentre-pps-paymentpage" default="make-all">
+
+	<property file="build.properties"/>
+
+	<target name="make-all" depends="make-en,make-ge,make-ru">
+		<zip basedir="." destfile="lib/${paymentpage.build.name}-archive.${paymentpage.build.number}.zip">
+			<include name="template/**"/>
+			<include name="resources/**"/>
+			<include name="lang/**"/>
+		</zip>	
+		<propertyfile file="build.properties">
+			<entry key="paymentpage.build.number" type="int" operation="+" value="1"/>
+		</propertyfile>
+	</target>
+
+	<target name="make-en">
+		<ant target="make-lang">
+			<property name="paymentpage.language" value="en"/>
+		</ant>
+	</target>
+	
+	<target name="make-ge">
+		<ant target="make-lang">
+			<property name="paymentpage.language" value="ge"/>
+		</ant>
+	</target>
+	
+	<target name="make-ru">
+		<ant target="make-lang">
+			<property name="paymentpage.language" value="ru"/>
+		</ant>
+	</target>
+	
+	<target name="make-lang">
+
+		<condition property="langfile.present">
+			<or>
+				<available file="lang/lang_${paymentpage.language}.properties"/>
+				<available file="lang/lang.properties"/>
+			</or>
+		</condition>
+		<condition property="paymentpage.template.dir" value="lib/template/${paymentpage.language}" else="template">
+			<istrue value="${langfile.present}"/>
+		</condition>	
+			
+		<ant target="make-template">
+		</ant>
+	
+        <delete dir="test/${paymentpage.language}"/>
+        <mkdir dir="test/${paymentpage.language}/resources"/>
+		<xslt basedir="xml"
+              includes="*.xml"
+              destdir="test/${paymentpage.language}"
+              style="${paymentpage.template.dir}/payment-page.xsl"/>
+        <copy todir="test/${paymentpage.language}/resources">
+            <fileset dir="resources">
+                <exclude name="*.xsl"/>
+            </fileset>
+        </copy>
+		
+		<mkdir dir="META-INF2/${paymentpage.language}/"/>
+        <copy todir="META-INF2/${paymentpage.language}/">
+            <fileset dir="META-INF/${paymentpage.language}/">
+                <exclude name="*.xsl"/>
+            </fileset>
+        </copy>
+		<replace dir="META-INF2/${paymentpage.language}/" propertyfile="build.properties">
+            <include name="*.xml"/>
+            <replacefilter token="@build.number@" property="paymentpage.build.number"/>
+            <replacefilter token="@name@" property="paymentpage.build.name"/>
+            <replacefilter token="@title@" property="paymentpage.build.title"/>
+        </replace>
+
+        <zip destfile="lib/${paymentpage.build.name}-${paymentpage.language}-example.${paymentpage.build.number}.zip">
+            <zipfileset dir="test/${paymentpage.language}"/>
+        </zip>
+
+        <jar file="lib/${paymentpage.build.name}-${paymentpage.language}.${paymentpage.build.number}.jar">
+            <zipfileset dir="META-INF2/${paymentpage.language}" prefix="META-INF">
+            </zipfileset>
+            <zipfileset dir="resources">
+                <exclude name="*.xsl"/>
+            </zipfileset>
+            <zipfileset dir="${paymentpage.template.dir}">
+                <include name="payment-page.xsl"/>
+            </zipfileset>
+			<zipfileset dir="screenshots/${paymentpage.language}">
+                <include name="*.jpg"/>
+            </zipfileset>
+		</jar>
+
+		<delete dir="lib/template"/>
+		<delete dir="META-INF2"/>
+		<delete file="lib/${paymentpage.build.name}-${paymentpage.language}-example.${paymentpage.build.number}.zip"/>
+
+	</target>
+
+	<target name="make-template" if="langfile.present">
+        <translate 	todir="lib/template/${paymentpage.language}"
+					starttoken="@"
+					endtoken="@"
+					srcencoding="utf-8"
+					bundle="lang/lang"
+					bundlelanguage="${paymentpage.language}"
+					forceoverwrite="yes">
+			<fileset dir="template">
+				<include name="*.xsl"/>
+			</fileset>
+		</translate>
+	</target>
+	
+</project>

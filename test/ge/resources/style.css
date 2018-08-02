@@ -1,0 +1,765 @@
+/*Fonts*/
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-style: normal;
+    src: url('fonts/Open-Sans-regular.eot');
+    src: url('fonts/Open-Sans-regular.eot?#iefix') format('embedded-opentype'),
+    local('Open Sans'),
+    local('Open-Sans-regular'),
+    url('fonts/Open-Sans-regular.woff2') format('woff2'),
+    url('fonts/Open-Sans-regular.woff') format('woff'),
+    url('fonts/Open-Sans-regular.ttf') format('truetype'),
+    url('fonts/Open-Sans-regular.svg#OpenSans') format('svg');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-style: normal;
+    src: url('fonts/Open-Sans-600.eot');
+    src: url('fonts/Open-Sans-600.eot?#iefix') format('embedded-opentype'),
+    local('Open Sans Semibold'),
+    local('Open-Sans-600'),
+    url('fonts/Open-Sans-600.woff2') format('woff2'),
+    url('fonts/Open-Sans-600.woff') format('woff'),
+    url('fonts/Open-Sans-600.ttf') format('truetype'),
+    url('fonts/Open-Sans-600.svg#OpenSans') format('svg');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-weight: 800;
+    font-style: normal;
+    src: url('fonts/Open-Sans-800.eot');
+    src: url('fonts/Open-Sans-800.eot?#iefix') format('embedded-opentype'),
+    local('Open Sans Extrabold'),
+    local('Open-Sans-800'),
+    url('fonts/Open-Sans-800.woff2') format('woff2'),
+    url('fonts/Open-Sans-800.woff') format('woff'),
+    url('fonts/Open-Sans-800.ttf') format('truetype'),
+    url('fonts/Open-Sans-800.svg#OpenSans') format('svg');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-weight: 400;
+    font-style: normal;
+    src: url('fonts/PT-Sans-regular.eot');
+    src: url('fonts/PT-Sans-regular.eot?#iefix') format('embedded-opentype'),
+    local('PT Sans'),
+    local('PT-Sans-regular'),
+    url('fonts/PT-Sans-regular.woff2') format('woff2'),
+    url('fonts/PT-Sans-regular.woff') format('woff'),
+    url('fonts/PT-Sans-regular.ttf') format('truetype'),
+    url('fonts/PT-Sans-regular.svg#PTSans') format('svg');
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('fonts/PT-Sans-700.eot');
+    src: url('fonts/PT-Sans-700.eot?#iefix') format('embedded-opentype'),
+    local('PT Sans Bold'),
+    local('PT-Sans-700'),
+    url('fonts/PT-Sans-700.woff2') format('woff2'),
+    url('fonts/PT-Sans-700.woff') format('woff'),
+    url('fonts/PT-Sans-700.ttf') format('truetype'),
+    url('fonts/PT-Sans-700.svg#PTSans') format('svg');
+}
+/*Common*/
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background-color: #e5e5e5;
+    color: #000000;
+}
+h2 {
+    font-family: "Open Sans Semibold ", sans-serif;
+    font-size: 26px;
+    margin: 0;
+    font-weight: bold;
+}
+.container {
+    min-height: 100%;
+    margin: 0 auto -120px auto;
+    box-sizing: border-box;
+    width: 382px;
+    padding-top: 25px;
+    padding-bottom: 135px;
+
+}
+.window {
+    background-color: #ffffff;
+    padding: 12px 36px 18px 36px;
+    border-radius: 7px;
+}
+
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    padding: 0 10px;
+    width: 100%;
+    height: 33px;
+    box-sizing: border-box;
+    border: none;
+    transition-duration: 0.3s;
+    transition-property: border-color, box-shadow;
+    outline: none;
+    background-color: #fff;
+    position: relative;
+}
+.empty {
+    background-color: transparent;
+}
+.center {text-align: center;}
+.right {text-align: right;}
+.red {color:#dc0606;}
+.green {color:#00A000;}
+.bold {font-weight: bold;}
+
+input.empty:focus {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.placeholder {
+    position: absolute;
+    height: 33px;
+    line-height: 32px;
+    font-size: 14px;
+    margin-left: 10px;
+}
+input:focus {
+    border: 1px solid #f3751b;
+}
+
+/*Checkbox*/
+input[type=checkbox] {
+    position: absolute;
+    width: initial;
+    opacity: 0;
+}
+input[type=checkbox]+label:before {
+    vertical-align: text-bottom;
+    display: inline-block;
+    margin-right: 11px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    background: #fff  no-repeat center center;
+    content: '';
+    transition: all 0.3s;
+}
+input[type=checkbox]:checked+label:before {
+    background-image: url(checkmark.svg);
+}
+input[type=checkbox]:focus+label:before {
+    border-color: #f3751b;
+    box-shadow: 0 0 1px 0 #f3751b;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+
+/*Header*/
+.header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 15px 0;
+    text-align: center;
+}
+.merchant-logo {
+    height: 52px;
+    padding-bottom: 16px;
+}
+
+/*Order Info*/
+.order {
+    position: relative;
+    font-size: 14px;
+}
+
+.description {
+    padding-top: 15px;
+}
+.title {
+    width: 28%;
+    font-weight: bold;
+    display: inline-block;
+}
+.purchase-amount, .purchase-description {
+    display: inline-block;
+    width: 72%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.amount {
+    vertical-align: middle;
+}
+.desc {
+    vertical-align: top;
+}
+
+.merchant-info .purchase-info {
+    width:522px;
+}
+.merchant-order {
+    display:inline-block;
+    width:100%;
+}
+
+.bank-logo {
+    position: absolute;
+    display:inline-block;
+    right:0;
+    width: 60px;
+    height: 53px;
+    /*border-radius: 25px;
+    border: 1px solid #ccc;*/
+    background-color: #fff;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.merchant-title, .merchant-url {
+    width: 248px;
+}
+
+.merchant-url {
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 30px;
+}
+.merchant-title {
+    font-size: 19px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 10px;
+}
+.merchant-title:hover .hint{
+    display: block;
+}
+.hint {
+    position: absolute;
+    display: none;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 8px;
+    color: #fff;
+    background-color: #000;
+    white-space: normal;
+    border-radius: 5px;
+    margin-left: -8px;
+    margin-top: 6px;
+    opacity: 0.8;
+}
+.hint:before {
+     position: absolute;
+     width: 0;
+     height: 0;
+     content: '';
+     border: 6px solid transparent;
+     border-bottom-color: #000;
+     margin-top: -20px;
+     margin-left: 10px;
+ }
+
+.purchase-amount {
+    font-size: 36px;
+    font-weight: bold;
+    max-height: 38px;
+    vertical-align: middle;
+}
+.purchase-amount span {
+    font-size: 36px;
+}
+.purchase-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+.purchase-description:hover .hint{
+     display: block;
+ }
+
+
+/*Payment Form*/
+.payment-form {
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+/*Card*/
+.card {
+    margin-bottom: 32px;
+}
+
+.card-front {
+    z-index: 2;
+    margin-top: 36px;
+}
+.card-front {
+    width: 310px;
+    height: 195px;
+    border-radius: 12px;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    box-shadow: 5px 11px 20px 0 rgba(0,0,0,.1);
+}
+
+.expiry {
+    margin-bottom: 21px;
+}
+.brand-logo {
+    background: url(logo-pay-system.png) no-repeat center;
+    padding: 12px 9px 12px 0;
+    height: 30px;
+    width: 224px;
+    margin-left: auto;
+    transition: all 0.3s;
+}
+.amex, .mastercard, .maestro, .visa {
+    width: 44px;
+}
+
+.mastercard {
+    background-position: -118px;
+}
+.maestro {
+    background-position: -60px;
+}
+.visa {
+    background-position: -180px;
+}
+.amex {
+    background-position: 0;
+}
+
+.input-label {
+    display: none;
+}
+.input-group {
+    margin: 0 9px 14px;
+}
+
+.input {
+    display: inline-block;
+    font-family: "PT Sans", sans-serif;
+    padding: 0 10px;
+    width: 100%;
+    height: 33px;
+    line-height: 33px;
+}
+
+.cvc {
+    display: inline-block;
+    text-align: right;
+    vertical-align: top;
+}
+.cvc .placeholder:after {
+    /*content:"CVV2"*/
+}
+#cvc-input {
+    vertical-align: top;
+}
+
+#month-input, #year-input, #cvc-input  {
+    width: 54px;
+}
+.cvc-info {
+    display: inline-block;
+    color: #aaa;
+    width: 94px;
+    padding: 0 8px;
+    font-size: 11px;
+    color: #aaa;
+}
+.save-card-info {
+    display: none;
+    clear:both;
+    margin: 20px auto;
+    max-width: 480px;
+    line-height: 150%;
+    color: #999;
+    transition: all 0.3s;
+    text-align:center;
+    margin: 20px auto 0 auto;
+    font-size: 14px;
+}
+
+#cardholdername-input {
+    width: 100%;
+}
+
+#cardholdersname-input {
+    width: 147px;
+    margin-left: 16px;
+}
+
+/*Inputs*/
+.form-input {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+}
+.slash {
+    display: inline-block;
+    margin: 0 7px;
+}
+#pan-input {
+    width: 100%;
+}
+#expary {
+    padding-top: 0;
+    transition: all 0.7s;
+}
+
+#cvc-input, #pan-input, #month-input, #year-input, #cardholdername-input, #cardholdersname-input {
+    background-color: #fff;
+}
+
+/*Buttons*/
+
+.btn-group {
+    margin: 17px auto 0 auto;
+}
+.btn_single {
+    text-align: right;
+}
+
+.btn {
+    font-family: "PT Sans", sans-serif;
+    display: inline-block;
+    border: 0;
+    border-radius: 7px;
+    width: 140px;
+    height: 37px;
+    color: #fff;
+    background-color: #999999;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none!important;
+    box-sizing: border-box;
+    transition: all 0.3s;
+    cursor: default;
+    text-decoration: none!important;
+    padding: 0;
+    text-align: center;
+    line-height: 14px;
+}
+
+.btn:hover, .btn:focus {
+    opacity: 0.8;
+}
+.btn-primary {
+    background-color: #f3751b;
+}
+.btn-group .btn-primary {
+    float: right;
+}
+.btn-back {
+    width:140px;
+    line-height: 14px;
+    padding-top: 4px;
+}
+
+.btn-email {
+    width:140px;
+    height:37px;
+    border-radius:0 7px 7px 0;
+    margin-left:-8px;
+    float:right;
+}
+.btn:disabled {
+    background-color: #ccc;
+}
+
+
+/*Errors*/
+input.error {
+    border-color: #ff4a4a;
+}
+input.error:focus {
+    box-shadow: 0 0 1px 0 #ff4a4a;
+}
+.error-container {
+    height: 0;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    font-size: 14px;
+    display: block;
+}
+label.error {
+    background-color: #ff6d6d;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 7px -10px 0;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    z-index: 3;
+}
+label.error:before {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    left: 50%;
+    border: 7px solid transparent;
+    border-bottom-color: #ff6d6d;
+    margin-top: -19px;
+    margin-left: -7px;
+}
+.formerror{padding-top:0.4em;padding-bottom:0.4em;border-bottom:1px dashed #CCCCCC;margin-bottom:0.5em}
+.paramerror{color:#dc0606;font-weight:bold}
+
+/*Result*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px -5px 0;
+}
+td, th {
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+th {
+    font-weight: bold;
+}
+.row-group td, .row-group th {
+    padding-top: 30px;
+}
+h2 {
+    font-family: "Open Sans Semibold ", sans-serif;
+    font-size: 26px;
+    margin: 0;
+}
+.result-success {
+    color: #259800;
+}
+.result-error {
+    color: #f00;
+}
+.result-error-description {
+    color: #fe000c;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    padding-top: 5px;
+}
+.offer-form {
+    text-align: center;
+}
+/*Other*/
+.payment-info {
+    margin: 0 auto;
+}
+.payment-info td {
+    max-width: 170px;
+}
+
+.only_text {margin: 20px 0;}
+
+.email-form {
+    padding-top: 10px;
+}
+.email {
+    background-color: #e6eef3;
+    margin: 20px -36px -19px -36px;
+    padding: 16px 36px 30px 36px;
+    border-radius: 0 0 7px 7px;
+    color: #000;
+}
+
+.email input[name=email] {
+    width: 170px;
+    height: 37px;
+    border-color:#75c0ff;
+}
+.email label{
+    color: #999;
+    background-color: #fff;
+}
+.email .form-input{
+    background-color: #fff;
+}
+.email_input_block {
+    margin-top: 10px;
+}
+
+#pay-bonus-wrapper, #pay-bonus-msg-wrapper  {display: none;}
+#pay-bonus-wrapper {
+    margin-top: 12px;
+}
+#pay-bonus-msg-wrapper {
+    margin-top: 5px;
+}
+
+/*Footer*/
+.footer {
+    margin: 0 auto;
+    text-align: center;
+}
+.footer p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 130%;
+    color: #999;
+}
+.secure-logo img{
+    width: 305px;
+    max-height: 22px;
+    margin: 17px 0 17px 0;
+}
+.secure-logo img, .footer{
+    max-width: 386px;
+}
+
+/*wo CARDHOLRER*/
+/*
+#cardholder {display: none;}
+#expiry {padding-top: 20px;}
+*/
+/*wo LOGO*/
+/*.bank-logo {
+    display: none;
+}
+.merchant-title, .merchant-url {
+    width: 100% !important;
+}
+*/
+/*loading*/
+#warningGradientOuterBarG{
+    height:14px;
+    width:212px;
+    border:1px solid rgb(0,0,0);
+    overflow:hidden;
+    background-color:rgb(255,255,255);
+    margin:auto;
+    background: gradient(linear, 0% 0%, 0% 100%, from(rgb(255,255,255)), to(rgb(0,0,0)));
+    background: -o-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,255,255)), to(rgb(0,0,0)));
+    background: -ms-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,255,255)), to(rgb(0,0,0)));
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,255,255)), to(rgb(0,0,0)));
+    background: -moz-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,255,255)), to(rgb(0,0,0)));
+    background: linear-gradient(top, rgb(255,255,255), rgb(243,117,27));
+    background: -o-linear-gradient(top, rgb(255,255,255), rgb(243,117,27));
+    background: -ms-linear-gradient(top, rgb(255,255,255), rgb(243,117,27));
+    background: -webkit-linear-gradient(top, rgb(255,255,255), rgb(243,117,27));
+    background: -moz-linear-gradient(top, rgb(255,255,255), rgb(243,117,27));
+}
+
+.warningGradientBarLineG{
+    background-color:rgb(255,255,255);
+    float:left;
+    width:14px;
+    height:117px;
+    margin-right:23px;
+    margin-top:-27px;
+    transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+}
+
+.warningGradientAnimationG{
+    width:230px;
+    animation-name:warningGradientAnimationG;
+    -o-animation-name:warningGradientAnimationG;
+    -ms-animation-name:warningGradientAnimationG;
+    -webkit-animation-name:warningGradientAnimationG;
+    -moz-animation-name:warningGradientAnimationG;
+    animation-duration:1.5s;
+    -o-animation-duration:1.5s;
+    -ms-animation-duration:1.5s;
+    -webkit-animation-duration:1.5s;
+    -moz-animation-duration:1.5s;
+    animation-iteration-count:infinite;
+    -o-animation-iteration-count:infinite;
+    -ms-animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+    animation-timing-function:linear;
+    -o-animation-timing-function:linear;
+    -ms-animation-timing-function:linear;
+    -webkit-animation-timing-function:linear;
+    -moz-animation-timing-function:linear;
+}
+
+@keyframes warningGradientAnimationG{
+    0%{margin-left:0px;}
+    100%{margin-left:-37px}
+}
+
+@-o-keyframes warningGradientAnimationG{
+    0%{margin-left:0px;}
+    100%{margin-left:-37px;}
+}
+
+@-ms-keyframes warningGradientAnimationG{
+    0%{margin-left:0px;}
+    100%{margin-left:-37px;}
+}
+
+@-webkit-keyframes warningGradientAnimationG{
+    0%{margin-left:0px;}
+    100%{margin-left:-37px;}
+}
+
+@-moz-keyframes warningGradientAnimationG{
+    0%{margin-left:0px;}
+    100%{margin-left:-37px;}
+}
+/*loading END*/
+
+@media print {
+    body {
+        background: none;
+    }
+    .container {
+        min-height: 0;
+        width: 90% !important;
+        margin: 0 auto !important;
+        padding:0 !important;
+    }
+    .payment-info {
+        border-top: 2px solid #999;
+        border-bottom: 1px solid #999;
+        padding-top: 30px;
+        box-shadow: none;
+    }
+    .footer {
+        margin-top: 0;
+    }
+    .no-print {
+        display: none;
+    }
+}

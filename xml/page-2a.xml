@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<payment-page language-code="en" resources-base-url="resources/">
+
+    <merchant 
+    	pcid="4AE6D1DC62E1A28A0F9522920E76C58B"
+        title="Test Merchant"
+        url="http://testmerchant.ru"
+        logo-url="resources/logo.gif"/>
+
+    <purchase desc="ISBN: 1445233434-45, 4457216346-42"/>
+
+    <payment-details 
+    	payment-type="card"
+        account-id="41E0B211B70623C84AE2ABF2892D578B"
+        display-amount="$23.85"
+        transaction-id="1235452" 
+        payment-date="05.06.2005 12:37"
+        stage="input_params">
+    </payment-details>
+
+    <pareq 
+    	action-url="page-2b.html"    	
+    	pareq="XXX"
+    	term-url="http://xxx.xxx"
+    	md="MD"/>
+
+</payment-page>

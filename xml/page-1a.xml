@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="Windows-1251"?>
+<payment-page language-code="en" resources-base-url="resources/">
+
+    <merchant 
+    	pcid="4AE6D1DC62E1A28A0F9522920E76C58B"
+        title="Test Merchant"
+        url="http://testmerchant.ru"
+        logo-url="resources/logo.gif"/>
+
+    <purchase desc=""/>
+
+    <payment-details 
+    	payment-type="card"
+        account-id="41E0B211B70623C84AE2ABF2892D578B"
+        display-amount=""
+        transaction-id="1235452" 
+        payment-date="05.06.2005 12:37"
+        stage="input_params">
+    </payment-details>
+
+    <payment-params action="page-1b.html">
+        <payment-param id="p.type" value="" error="false"/>
+        <payment-param id="p.cardholder" value="" error="false"/>
+        <payment-param id="p.pan" value="" error="false"/>
+        <payment-param id="p.expiry" value="" error="false"/>
+        <payment-param id="p.cvv2" value="" error="false"/>
+    </payment-params>
+
+</payment-page>
