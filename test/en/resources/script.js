@@ -32,31 +32,22 @@ $(document).ready(function() {
                 d2 = val.length >= 2 ? parseInt(val.substr(0, 2), 10) : 0,
                 d6 = val.length >= 6 ? parseInt(val.substr(0, 6), 10) : 0;
                 d9 = val.length >= 9 ? parseInt(val.substr(0, 9), 10) : 0;
-
+                console.log(d9);
             if (d1 == 4) {
                 $el.addClass('visa');
-                $el_cvv.html('CVV2');
                 $el_cvv_input.attr('maxlength', '3');
                 chengeCVVDesc(3);
             } else if ((51 <= d2 && d2 <= 55) || (222100 <= d6 && d6 <= 272099)) {
                 $el.addClass('mastercard');
-                $el_cvv.html('CVC2');
-                $el_cvv_input.attr('maxlength', '3');
-                chengeCVVDesc(3);
-            } else if (d1 == 6 || d2 == 50 || (56 <= d2 && d2 <= 59)) {
-                $el.addClass('maestro');
-                $el_cvv.html('CVC2');
                 $el_cvv_input.attr('maxlength', '3');
                 chengeCVVDesc(3);
             } else if ((375121000 <= d9 && d9 <= 375121999) || (379897000 <= d9 && d9 <= 379897999)) {
                 $el.addClass('amex');
-                $el_cvv.html('CSC');
                 $el_cvv_input.attr('maxlength', '4');
                 $el_cvv_input.attr('data-rule-minlength', '4');
                 chengeCVVDesc(4);
             } else {
                 $el.addClass('unknown');
-                $el_cvv.html('CVV');
                 $el_cvv_input.attr('maxlength', '3');
                 chengeCVVDesc(3);
             }

@@ -10,7 +10,6 @@
     <xsl:variable name="MERCHANT_ID" select="/payment-page/merchant/@pcid"/>
     <xsl:variable name="MERCHANT_TITLE" select="/payment-page/merchant/@title"/>
     <xsl:variable name="MERCHANT_URL" select="/payment-page/merchant/@url"/>
-    <!-- <xsl:variable name="MERCHANT_LOGO_URL" select="/payment-page/merchant/@logo-url"/> -->
 
     <xsl:variable name="PAYMENT_DESCRIPTION" select="/payment-page/purchase/@desc"/>
     <xsl:variable name="HIDE_DESC" select="/payment-page/payment-params/payment-param[@id='hidedesc']/@value"/>
@@ -163,8 +162,8 @@
                     <form id="payment-form" name="p.params" action="{$ACTION_URL}" method="POST" autocomplete="off">
                         <div class="card">
                             <div class="card-front">
-                                <div id="brand-logo" class="brand-logo"></div>
                                 <div class="input-group">
+                                    <div id="brand-logo" class="brand-logo"></div>
                                     <span id="pan-input" class="form-input">
                                         <input id="pan_full" type="hidden" name="{$PAN_PARAM}" value="{$PAN_VALUE}"/>
                                         <label for="pan" class="placeholder">@PAN@</label>
@@ -195,9 +194,8 @@
 
                                 <div class="input-group" id="expiry">
                                     <input type="hidden" name="p.expiry" value="{$EXPIRY_VALUE}"/>
-                                    <label class="input-label">@EXPIRY_DATE@</label>
+                                    <label class="placeholder">@EXPIRY_DATE@ (@MONTH@ / @YEAR@)</label>
                                     <span id="month-input" class="form-input">
-                                        <label for="month" class="placeholder">@MONTH@</label>
                                         <xsl:choose>
                                             <xsl:when test="$PAN_MASKED='true'">
                                                 <input id="month" name="p.expiry.month" maxlength="2"
@@ -221,7 +219,6 @@
                                     </span>
                                     <span class="slash">/</span>
                                     <span id="year-input" class="form-input">
-                                        <label for="year" class="placeholder">@YEAR@</label>
                                         <xsl:choose>
                                             <xsl:when test="$PAN_MASKED='true'">
                                                 <input id="year" name="p.expiry.year" maxlength="2" class=""
@@ -243,13 +240,13 @@
                                             </xsl:otherwise>
                                         </xsl:choose>
                                     </span>
+                                </div>
 
-
+                                <div class="input-group" id="cvv">
                                     <div class="cvc">
-                                        <label class="cvc-info">@ABOUT_CVV@</label>
                                         <span id="cvc-input" class="form-input">
-                                            <label for="cvc" class="placeholder">CVV</label>
-                                            <input id="cvc" name="{$CVV2_PARAM}" maxlength="3" type="password" class=""
+                                            <label for="cvc" class="placeholder">CVC2 ან CVV2:</label>
+                                            <input id="cvc" name="{$CVV2_PARAM}" maxlength="3" type="text" class=""
                                                    required="required"
                                                    data-rule-minlength="3"
                                                    data-msg-minlength1="@ERROR_MINLENGTH_TEXT_1@"
@@ -260,6 +257,7 @@
                                                    tabindex="4"/>
                                             <span class="error-container"></span>
                                         </span>
+                                        <label class="cvc-info">@ABOUT_CVV@</label>
                                     </div>
                                 </div>
                                 <xsl:if test="$SHOW_CARDHOLDER = 'yes'">
@@ -293,6 +291,7 @@
                                         <![CDATA[
                                             #cardholder {display: none;}
                                             #expiry {padding-top: 20px;}
+                                            #cvv {padding-top: 20px;}
                                             ]]>
                                     </style>
                                 </xsl:if>
@@ -375,7 +374,6 @@
                         </xsl:if>
                         <div class="btn-group">
                             <input class="btn btn-primary" type="submit" tabindex="8" value="@PAY_NOW@"/>
-                            <input class="btn button_cancel" type="submit" name="p.cancel" value="@CANCEL@" formnovalidate="formnovalidate" tabindex="9"/>
                         </div>
                     </form>
                 </div>
