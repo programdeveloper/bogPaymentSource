@@ -244,8 +244,8 @@
 
                                 <div class="input-group" id="cvv">
                                     <div class="cvc">
-                                        <span id="cvc-input" class="form-input">
-                                            <label for="cvc" class="placeholder">CVC2 ან CVV2:</label>
+                                        <span id="cvc-input" class="form-input cvc-hint">
+                                            <label for="cvc" class="placeholder">CVC2 ან CVV2: <i class="far fa-question-circle"></i></label>
                                             <input id="cvc" name="{$CVV2_PARAM}" maxlength="3" type="text" class=""
                                                    required="required"
                                                    data-rule-minlength="3"
@@ -257,7 +257,10 @@
                                                    tabindex="4"/>
                                             <span class="error-container"></span>
                                         </span>
-                                        <label class="cvc-info">@ABOUT_CVV@</label>
+                                        <div class="cvc-hover">
+                                            <label class="cvc-info">@ABOUT_CVV@</label>
+                                            <div class="cvc-info-image"></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <xsl:if test="$SHOW_CARDHOLDER = 'yes'">
@@ -662,6 +665,7 @@
                 <title><xsl:value-of select="$title"/></title>
                 <link rel="stylesheet" type="text/css" href="{$RESOURCE_BASE}reset.css"/>
                 <link rel="stylesheet" type="text/css" href="{$RESOURCE_BASE}style.css"/>
+                <link rel="stylesheet" type="text/css" href="{$RESOURCE_BASE}css/all.css"/>
                 <xsl:call-template name="AUTOREFRESH"/>
             </head>
             <body id="thebody">

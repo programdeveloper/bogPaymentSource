@@ -1,88 +1,37 @@
 /*Fonts*/
 @font-face {
-    font-family: 'Open Sans';
-    font-weight: 400;
-    font-style: normal;
-    src: url('fonts/Open-Sans-regular.eot');
-    src: url('fonts/Open-Sans-regular.eot?#iefix') format('embedded-opentype'),
-    local('Open Sans'),
-    local('Open-Sans-regular'),
-    url('fonts/Open-Sans-regular.woff2') format('woff2'),
-    url('fonts/Open-Sans-regular.woff') format('woff'),
-    url('fonts/Open-Sans-regular.ttf') format('truetype'),
-    url('fonts/Open-Sans-regular.svg#OpenSans') format('svg');
+    font-family: 'BPG Nino Medium Caps';
+    src: url('fonts/bpg-nino-medium-caps-webfont.eot'); /* IE9 Compat Modes */
+    src: url('fonts/bpg-nino-medium-caps-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/bpg-nino-medium-caps-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/bpg-nino-medium-caps-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('fonts/bpg-nino-medium-caps-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('fonts/bpg-nino-medium-caps-webfont.svg#bpg_nino_medium_capsregular') format('svg'); /* Legacy iOS */
 }
 
 @font-face {
-    font-family: 'Open Sans';
-    font-weight: 600;
-    font-style: normal;
-    src: url('fonts/Open-Sans-600.eot');
-    src: url('fonts/Open-Sans-600.eot?#iefix') format('embedded-opentype'),
-    local('Open Sans Semibold'),
-    local('Open-Sans-600'),
-    url('fonts/Open-Sans-600.woff2') format('woff2'),
-    url('fonts/Open-Sans-600.woff') format('woff'),
-    url('fonts/Open-Sans-600.ttf') format('truetype'),
-    url('fonts/Open-Sans-600.svg#OpenSans') format('svg');
+    font-family: 'BPG Arial';
+    src: url('fonts/bpg-arial-webfont.eot'); /* IE9 Compat Modes */
+    src: url('fonts/bpg-arial-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/bpg-arial-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/bpg-arial-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+         url('fonts/bpg-arial-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('fonts/bpg-arial-webfont.svg#bpg_arialregular') format('svg'); /* Legacy iOS */
 }
-
-@font-face {
-    font-family: 'Open Sans';
-    font-weight: 800;
-    font-style: normal;
-    src: url('fonts/Open-Sans-800.eot');
-    src: url('fonts/Open-Sans-800.eot?#iefix') format('embedded-opentype'),
-    local('Open Sans Extrabold'),
-    local('Open-Sans-800'),
-    url('fonts/Open-Sans-800.woff2') format('woff2'),
-    url('fonts/Open-Sans-800.woff') format('woff'),
-    url('fonts/Open-Sans-800.ttf') format('truetype'),
-    url('fonts/Open-Sans-800.svg#OpenSans') format('svg');
-}
-
-@font-face {
-    font-family: 'PT Sans';
-    font-weight: 400;
-    font-style: normal;
-    src: url('fonts/PT-Sans-regular.eot');
-    src: url('fonts/PT-Sans-regular.eot?#iefix') format('embedded-opentype'),
-    local('PT Sans'),
-    local('PT-Sans-regular'),
-    url('fonts/PT-Sans-regular.woff2') format('woff2'),
-    url('fonts/PT-Sans-regular.woff') format('woff'),
-    url('fonts/PT-Sans-regular.ttf') format('truetype'),
-    url('fonts/PT-Sans-regular.svg#PTSans') format('svg');
-}
-
-@font-face {
-    font-family: 'PT Sans';
-    font-weight: 700;
-    font-style: normal;
-    src: url('fonts/PT-Sans-700.eot');
-    src: url('fonts/PT-Sans-700.eot?#iefix') format('embedded-opentype'),
-    local('PT Sans Bold'),
-    local('PT-Sans-700'),
-    url('fonts/PT-Sans-700.woff2') format('woff2'),
-    url('fonts/PT-Sans-700.woff') format('woff'),
-    url('fonts/PT-Sans-700.ttf') format('truetype'),
-    url('fonts/PT-Sans-700.svg#PTSans') format('svg');
-}
-
 /*Common*/
 html {
     height: 100%;
 }
 body {
     height: 100%;
-    font-family: "PT Sans", sans-serif;
+    font-family: "BPG Nino Medium Caps", sans-serif;
     font-size: 14px;
     margin: 0;
     padding: 0;
     color: #000000;
 }
 h2 {
-    font-family: "Open Sans Semibold ", sans-serif;
+    font-family: "BPG Nino Medium Caps", sans-serif;
     font-size: 26px;
     margin: 0;
     font-weight: bold;
@@ -91,22 +40,21 @@ h2 {
     min-height: 100%;
     margin: 0 auto -120px auto;
     box-sizing: border-box;
-    width: 382px;
+    width: 360px;
     padding-top: 25px;
     padding-bottom: 135px;
 
 }
 .window {
-    padding: 12px 36px 18px 36px;
+    /*padding: 12px 36px 18px 36px;*/
 }
 
 input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    font-family: "PT Sans", sans-serif;
+    font-family: "BPG Nino Medium Caps", sans-serif;
     font-size: 14px;
-    padding: 0 10px;
     width: 100%;
     height: 34px;
     box-sizing: border-box;
@@ -131,6 +79,7 @@ input.empty:focus {
 }
 .placeholder {
     height: 34px;
+    width:  150px;
     display:  block;
     line-height: 32px;
     font-size: 14px;
@@ -312,7 +261,7 @@ a:hover {
     margin-top: 36px;
 }
 .card-front {
-    width: 310px;
+    width: 360px;
     height: 280px;
     position: relative;
     box-sizing: border-box;
@@ -353,7 +302,7 @@ a:hover {
 
 .input {
     display: inline-block;
-    font-family: "PT Sans", sans-serif;
+    font-family: "BPG Nino Medium Caps", sans-serif;
     padding: 0 10px;
     width: 100%;
     height: 34px;
@@ -364,23 +313,40 @@ a:hover {
     display: inline-block;
     vertical-align: top;
 }
-.cvc .placeholder:after {
-    /*content:"CVV2"*/
-}
+
 #cvc-input {
     vertical-align: top;
 }
 
 #month-input, #year-input, #cvc-input  {
-    width: 90px;
+    width: 99px;
+}
+.cvc-hint{
+    cursor: pointer;
+}
+.cvc-hint:hover + .cvc-hover{
+    display: inline-block !important;
+}
+.cvc-hover{
+    display: none;
+    margin-left: 20px;
 }
 .cvc-info {
     display: inline-block;
+    font-family: 'BPG Arial',sans-serif;
     width: 200px;
-    padding: 0 8px;
-    line-height: 16px;
-    font-size: 11px;
+    /* padding: 0 10px; */
+    line-height: 12px;
+    font-size: 10px;
     color: #0f1727;
+}
+.cvc-info-image{
+    background: url(cvc.png) no-repeat center;
+    height: 37px;
+    width: 57px;
+    /* margin-left: 10px; */
+    z-index:1;
+    margin-top: 8px;
 }
 .save-card-info {
     display: none;
@@ -412,7 +378,8 @@ a:hover {
 }
 .slash {
     display: inline-block;
-    margin: 0 7px;
+    margin: 0 16px;
+    font-size: 15px;
 }
 #pan-input {
     width: 100%;
@@ -434,7 +401,7 @@ a:hover {
 }
 
 .btn {
-    font-family: "PT Sans", sans-serif;
+    font-family: "BPG Nino Medium Caps", sans-serif;
     display: inline-block;
     border: 0;
     width: 100%;
@@ -522,7 +489,7 @@ table {
     margin: 20px -5px 0;
 }
 td, th {
-    font-family: "PT Sans", sans-serif;
+    font-family: "BPG Nino Medium Caps", sans-serif;
     font-size: 14px;
     padding: 5px;
     text-align: left;
@@ -537,7 +504,7 @@ th {
     padding-top: 30px;
 }
 h2 {
-    font-family: "Open Sans Semibold ", sans-serif;
+    font-family: "BPG Nino Medium Caps", sans-serif;
     font-size: 26px;
     margin: 0;
 }
@@ -549,7 +516,7 @@ h2 {
 }
 .result-error-description {
     color: #fe000c;
-    font-family: "Open Sans", sans-serif;
+    font-family: "BPG Nino Medium Caps", sans-serif;
     font-size: 14px;
     padding-top: 5px;
 }
