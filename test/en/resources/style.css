@@ -467,6 +467,7 @@ label.error {
     text-align: center;
     display: inline-block;
     position: relative;
+    font-size: 10px;
     z-index: 3;
 }
 label.error:before {
