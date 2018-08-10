@@ -529,6 +529,7 @@ h2 {
 }
 .payment-info td {
     max-width: 170px;
+    text-align: center;
 }
 
 .only_text {margin: 20px 0;}
