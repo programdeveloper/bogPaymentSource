@@ -476,36 +476,12 @@
             <xsl:with-param name="content">
                 <div class="payment-info">
                     <table>
-                        <xsl:if test="$CARD_TYPE"><tr><td>@CARD_TYPE@:</td><td><xsl:value-of select="$CARD_TYPE"/></td></tr></xsl:if>
-                        <xsl:if test="$CARDHOLDER"><tr><td>@CARDHOLDER@:</td><td><xsl:value-of select="$CARDHOLDER"/></td></tr></xsl:if>
-                        <xsl:if test="$PAN"><tr><td>@PAN@:</td><td><xsl:value-of select="$PAN"/></td></tr></xsl:if>
-                        <xsl:if test="$MERCHANT_URL"><tr><td>@MERCHANT_URL@:</td><td><a href="{$MERCHANT_URL}" target="_blank"><xsl:value-of select="$MERCHANT_URL"/></a></td></tr></xsl:if>
-                        <xsl:if test="$TRX_ID"><tr><td>@TRANSACTION_NUMBER@:</td><td><xsl:value-of select="$TRX_ID"/></td></tr></xsl:if>
-                        <tr><td>@DATE@:</td><td><xsl:value-of select="$DATE"/></td></tr>
-                        <xsl:if test="$REFERENCE_NUMBER"><tr><td>@REFERENCE_NUMBER@:</td><td><xsl:value-of select="$REFERENCE_NUMBER"/></td></tr></xsl:if>
+                       
                         <tr>
-                            <td>@RESULT@:</td>
                             <td>
                                 <xsl:choose>
-                                    <xsl:when test="$RESULT='ERROR'">
-                                        <b class="red">
-                                            <xsl:choose>
-                                                <xsl:when test="$RESPONSE_CODE='101'">@P_ERROR_101@</xsl:when>
-                                                <xsl:when test="$RESPONSE_CODE='110'">@P_ERROR_110@</xsl:when>
-                                                <xsl:when test="$RESPONSE_CODE='111'">@P_ERROR_111@</xsl:when>
-                                                <xsl:when test="$RESPONSE_CODE='116'">@P_ERROR_116@</xsl:when>
-                                                <xsl:when test="$RESPONSE_CODE='118'">@P_ERROR_118@</xsl:when>
-                                                <xsl:when test="$RESPONSE_CODE='119'">@P_ERROR_119@</xsl:when>
-                                                <xsl:when test="$RESPONSE_CODE='120'">@P_ERROR_120@</xsl:when>
-                                                <xsl:when test="$RESPONSE_CODE='121'">@P_ERROR_121@</xsl:when>
-                                                <xsl:when test="$RESPONSE_CODE='123'">@P_ERROR_123@</xsl:when>
-                                                <xsl:when test="$RESPONSE_CODE='125'">@P_ERROR_125@</xsl:when>
-                                                <xsl:otherwise>@PAYMENT_ERROR@</xsl:otherwise>
-                                            </xsl:choose>
-                                        </b>
-                                    </xsl:when>
-                                    <xsl:when test="$RESULT='USER_CANCELLED'"><b class="red">@USER_CANCELLED@</b></xsl:when>
-                                    <xsl:when test="$RESULT='CARDPAYMENT_ERROR'"><b class="red">@PAYMENT_ERROR@</b></xsl:when>
+                                    <xsl:when test="$RESULT='USER_CANCELLED'"><b class="red">ტრანზაქცია წარუმატებელია</b></xsl:when>
+                                    <xsl:when test="$RESULT='CARDPAYMENT_ERROR'"><b class="red">ტრანზაქცია წარუმატებელია</b></xsl:when>
                                     <xsl:otherwise>
                                         <xsl:if test="$WITH_REDIRECT = 'yes'">
                                             <script>
@@ -513,7 +489,7 @@
                                                 location.replace('<xsl:value-of select="$MERCHANT_BACK_URL"/>');
                                             </script>
                                         </xsl:if>
-                                        <b class="green">@PAYMENT_COMPLETE@</b></xsl:otherwise>
+                                        <b class="green">ტრანზაქცია დასრულდა წარმატებით.</b></xsl:otherwise>
                                 </xsl:choose>
                             </td>
                         </tr>
@@ -599,19 +575,6 @@
                             </xsl:choose>
                         </xsl:if>
                     </table>
-
-
-
-
-                    <xsl:if test="$RESULT='COMPLETE_OFFLINE'">
-                        <div class="message">@PAYMENT_OFFLINE@</div>
-                    </xsl:if>
-                    <div class="result-form no-print">
-                        <div class="btn-group">
-                            <button class="btn no-mobile" type="button" onclick="javascript:window.print()">@PRINT_RESULT@</button>
-                            <a href="{$MERCHANT_BACK_URL}" class="btn btn-primary btn-back">@RETURN_TO_MERCHANT@</a>
-                        </div>
-                    </div>
 
                     <xsl:if test="$SHOW_EMAIL = 'yes'">
                         <xsl:choose>
