@@ -159,6 +159,7 @@
 
                 <xsl:if test="$ERROR='error'"><div class="formerror"><span class='red'>@INPUT_PARAMS_ERROR_WARNING@</span></div></xsl:if>
                 <div id="offer">
+                    <div class="logo"><div class="logo-img"></div></div>
                     <form id="payment-form" name="p.params" action="{$ACTION_URL}" method="POST" autocomplete="off">
                         <div class="card">
                             <div class="card-front">
@@ -191,115 +192,126 @@
                                     </span>
                                 </div>
 
-
-                                <div class="input-group" id="expiry">
-                                    <input type="hidden" name="p.expiry" value="{$EXPIRY_VALUE}"/>
-                                    <label class="placeholder">@EXPIRY_DATE@ (@MONTH@ / @YEAR@)</label>
-                                    <span id="month-input" class="form-input">
-                                        <xsl:choose>
-                                            <xsl:when test="$PAN_MASKED='true'">
-                                                <input id="month" name="p.expiry.month" maxlength="2"
-                                                       required="required"
-                                                       value="{substring($EXPIRY_VALUE,3,2)}"
-                                                       tabindex="2"
-                                                       readonly="readonly"/>
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                                                <input id="month" name="p.expiry.month" maxlength="2"
-                                                       required="required" data-rule-min="1" data-rule-max="12" data-rule-minlength="2"
-                                                       data-msg="@ERROR_MONTH@"
-                                                       data-msg-minlength="@ERROR_MINLENGTH_2@"
-                                                       data-msg-required="@ERROR_REQUIRED@"
-                                                       data-next-elem="year"
-                                                       value="{substring($EXPIRY_VALUE,3,2)}"
-                                                       tabindex="2"/>
-                                                <span class="error-container" ></span>
-                                            </xsl:otherwise>
-                                        </xsl:choose>
-                                    </span>
-                                    <span class="slash">/</span>
-                                    <span id="year-input" class="form-input">
-                                        <xsl:choose>
-                                            <xsl:when test="$PAN_MASKED='true'">
-                                                <input id="year" name="p.expiry.year" maxlength="2" class=""
-                                                       required="required"
-                                                       value="{substring($EXPIRY_VALUE,1,2)}"
-                                                       tabindex="3"
-                                                       readonly="readonly"/>
-                                            </xsl:when>
-                                            <xsl:otherwise>
-                                                <input id="year" name="p.expiry.year" maxlength="2" class=""
-                                                       required="required" data-rule-min="17" data-rule-minlength="2"
-                                                       data-msg="@ERROR_EXPIRED@"
-                                                       data-msg-minlength="@ERROR_MINLENGTH_2@"
-                                                       data-msg-required="@ERROR_REQUIRED@"
-                                                       data-next-elem="cvc"
-                                                       value="{substring($EXPIRY_VALUE,1,2)}"
-                                                       tabindex="3"/>
-                                                <span class="error-container"></span>
-                                            </xsl:otherwise>
-                                        </xsl:choose>
-                                    </span>
-                                </div>
-
-                                <div class="input-group" id="cvv">
-                                    <div class="cvc">
-                                        <span id="cvc-input" class="form-input cvc-hint">
-                                            <label for="cvc" class="placeholder">CVC2 ან CVV2: <i class="far fa-question-circle"></i></label>
-                                            <input id="cvc" name="{$CVV2_PARAM}" maxlength="3" type="text" class=""
-                                                   required="required"
-                                                   data-rule-minlength="3"
-                                                   data-msg-minlength1="@ERROR_MINLENGTH_TEXT_1@"
-                                                   data-msg-minlength2="@ERROR_MINLENGTH_TEXT_2@"
-                                                   data-msg-required="@ERROR_REQUIRED@"
-                                                   data-next-elem="name"
-                                                   value="{$CVV2_VALUE}"
-                                                   tabindex="4"/>
-                                            <span class="error-container"></span>
-                                        </span>
-                                        <div class="cvc-hover">
-                                            <label class="cvc-info">@ABOUT_CVV@</label>
-                                            <div class="cvc-info-image"></div>
+                                <div class="second-section">
+                                    <div class="input-group" id="expiry">
+                                        <input type="hidden" name="p.expiry" value="{$EXPIRY_VALUE}"/>
+                                        <label class="placeholder">
+                                            @EXPIRY_DATE@ (@MONTH@/@YEAR@)
+                                        </label>
+                                        <div class="expiration">
+                                            <span id="month-input" class="form-input">
+                                                <xsl:choose>
+                                                    <xsl:when test="$PAN_MASKED='true'">
+                                                        <input id="month" name="p.expiry.month" maxlength="2"
+                                                               required="required"
+                                                               value="{substring($EXPIRY_VALUE,3,2)}"
+                                                               tabindex="2"
+                                                               readonly="readonly"/>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <input id="month" name="p.expiry.month" maxlength="2"
+                                                               required="required" data-rule-min="1" data-rule-max="12" data-rule-minlength="2"
+                                                               data-msg="@ERROR_MONTH@"
+                                                               data-msg-minlength="@ERROR_MINLENGTH_2@"
+                                                               data-msg-required="@ERROR_REQUIRED@"
+                                                               data-next-elem="year"
+                                                               value="{substring($EXPIRY_VALUE,3,2)}"
+                                                               tabindex="2"/>
+                                                        <span class="error-container" ></span>
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                            </span>
+                                            <span class="slash">
+                                                <svg width="9px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.883 17.467">
+                                                  <defs>
+                                                    <style>
+                                                      .cls-1 {
+                                                        fill: none;
+                                                        stroke: #919191;
+                                                      }
+                                                    </style>
+                                                  </defs>
+                                                  <path id="Path_1483" data-name="Path 1483" class="cls-1" d="M-14468.281-435.192l9-17" transform="translate(14468.723 452.426)"/>
+                                                </svg>
+                                            </span>
+                                            <span id="year-input" class="form-input">
+                                                <xsl:choose>
+                                                    <xsl:when test="$PAN_MASKED='true'">
+                                                        <input id="year" name="p.expiry.year" maxlength="2" class=""
+                                                               required="required"
+                                                               value="{substring($EXPIRY_VALUE,1,2)}"
+                                                               tabindex="3"
+                                                               readonly="readonly"/>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <input id="year" name="p.expiry.year" maxlength="2" class=""
+                                                               required="required" data-rule-min="17" data-rule-minlength="2"
+                                                               data-msg="@ERROR_EXPIRED@"
+                                                               data-msg-minlength="@ERROR_MINLENGTH_2@"
+                                                               data-msg-required="@ERROR_REQUIRED@"
+                                                               data-next-elem="cvc"
+                                                               value="{substring($EXPIRY_VALUE,1,2)}"
+                                                               tabindex="3"/>
+                                                        <span class="error-container"></span>
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                            </span>
                                         </div>
                                     </div>
-                                </div>
-                                <xsl:if test="$SHOW_CARDHOLDER = 'yes'">
-                                    <div class="input-group" id="cardholder">
-                                        <label class="input-label">@CARDHOLDER@</label>
-                                        <span id="cardholdername-input" class="form-input">
-                                            <label for="name" class="placeholder">@CARDHOLDER@</label>
-                                            <xsl:choose>
-                                                <xsl:when test="$PAN_MASKED='true'">
-                                                    <input  id="name" name="{$CARDHOLDER_PARAM}" maxlength="24"
-                                                            value="{$CARDHOLDER_VALUE}"
-                                                            tabindex="5"
-                                                            readonly="readonly"/>
-                                                </xsl:when>
-                                                <xsl:otherwise>
-                                                    <input  id="name" name="{$CARDHOLDER_PARAM}" maxlength="24"
-                                                            class=""
-                                                            required="required"
-                                                            data-msg-required="@ERROR_REQUIRED@"
-                                                            data-msg-chars="@ERROR_LATIN_CHARS_ONLY@"
-                                                            value="{$CARDHOLDER_VALUE}"
-                                                            tabindex="5"/>
-                                                    <span class="error-container"></span>
-                                                </xsl:otherwise>
-                                            </xsl:choose>
-                                        </span>
-                                    </div>
-                                </xsl:if>
-                                <xsl:if test="$SHOW_CARDHOLDER = 'no'">
-                                    <style>
-                                        <![CDATA[
-                                            #cardholder {display: none;}
-                                            #expiry {padding-top: 20px;}
-                                            #cvv {padding-top: 20px;}
-                                            ]]>
-                                    </style>
-                                </xsl:if>
-                            </div>
 
+                                    <div class="input-group" id="cvv">
+                                            <div class="cvc form-input">
+                                                <div class="cvc-hint">
+                                                    <i class="fas fa-question-circle"></i>
+                                                </div>
+                                                <label for="cvc" class="placeholder">CVC2 ან CVV2:</label>
+                                                <input id="cvc" name="{$CVV2_PARAM}" maxlength="3" type="text" class=""
+                                                       required="required"
+                                                       data-rule-minlength="3"
+                                                       data-msg-minlength1="@ERROR_MINLENGTH_TEXT_1@"
+                                                       data-msg-minlength2="@ERROR_MINLENGTH_TEXT_2@"
+                                                       data-msg-required="@ERROR_REQUIRED@"
+                                                       data-next-elem="name"
+                                                       value="{$CVV2_VALUE}"
+                                                       tabindex="4"/>
+                                                <span class="error-container"></span>
+                                            </div>
+                                    </div>
+                                    <xsl:if test="$SHOW_CARDHOLDER = 'yes'">
+                                        <div class="input-group" id="cardholder">
+                                            <label class="input-label">@CARDHOLDER@</label>
+                                            <span id="cardholdername-input" class="form-input">
+                                                <label for="name" class="placeholder">@CARDHOLDER@</label>
+                                                <xsl:choose>
+                                                    <xsl:when test="$PAN_MASKED='true'">
+                                                        <input  id="name" name="{$CARDHOLDER_PARAM}" maxlength="24"
+                                                                value="{$CARDHOLDER_VALUE}"
+                                                                tabindex="5"
+                                                                readonly="readonly"/>
+                                                    </xsl:when>
+                                                    <xsl:otherwise>
+                                                        <input  id="name" name="{$CARDHOLDER_PARAM}" maxlength="24"
+                                                                class=""
+                                                                required="required"
+                                                                data-msg-required="@ERROR_REQUIRED@"
+                                                                data-msg-chars="@ERROR_LATIN_CHARS_ONLY@"
+                                                                value="{$CARDHOLDER_VALUE}"
+                                                                tabindex="5"/>
+                                                        <span class="error-container"></span>
+                                                    </xsl:otherwise>
+                                                </xsl:choose>
+                                            </span>
+                                        </div>
+                                    </xsl:if>
+                                    <xsl:if test="$SHOW_CARDHOLDER = 'no'">
+                                        <style>
+                                            <![CDATA[
+                                                #cardholder {display: none;}
+                                                ]]>
+                                        </style>
+                                    </xsl:if>
+                                </div>
+                            </div>
                         </div>
                         <xsl:if test="/payment-page/payment-params/payment-param[@id=$PAY_BONUS_PARAM]/@value = 'Y'">
                             <div id="pay-bonus-wrapper">
@@ -375,8 +387,15 @@
                                 ]]>
                             </script>
                         </xsl:if>
+                        <div class="cvc-hover">
+                            <label class="cvc-info">@ABOUT_CVV@</label>
+                            <div class="cvc-info-image"></div>
+                        </div>
                         <div class="btn-group">
                             <input class="btn btn-primary" type="submit" tabindex="8" value="@PAY_NOW@"/>
+                        </div>
+                        <div class="verify-wrapper">
+                            <div class="verify-img"></div>
                         </div>
                     </form>
                 </div>

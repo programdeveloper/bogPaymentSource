@@ -1,24 +1,37 @@
 /*Fonts*/
-@font-face {
-    font-family: 'BPG Nino Medium Caps';
-    src: url('fonts/bpg-nino-medium-caps-webfont.eot'); /* IE9 Compat Modes */
-    src: url('fonts/bpg-nino-medium-caps-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('fonts/bpg-nino-medium-caps-webfont.woff2') format('woff2'), /* Super Modern Browsers */
-         url('fonts/bpg-nino-medium-caps-webfont.woff') format('woff'), /* Pretty Modern Browsers */
-         url('fonts/bpg-nino-medium-caps-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('fonts/bpg-nino-medium-caps-webfont.svg#bpg_nino_medium_capsregular') format('svg'); /* Legacy iOS */
-}
 
 @font-face {
+    font-family: 'BPG Nino Medium Caps';
+    src: url('fonts/bpg-nino-medium-caps-webfont.eot');
+    /* IE9 Compat Modes */
+    src: url('fonts/bpg-nino-medium-caps-webfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('fonts/bpg-nino-medium-caps-webfont.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('fonts/bpg-nino-medium-caps-webfont.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('fonts/bpg-nino-medium-caps-webfont.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('fonts/bpg-nino-medium-caps-webfont.svg#bpg_nino_medium_capsregular') format('svg');
+    /* Legacy iOS */
+}
+@font-face {
     font-family: 'BPG Arial';
-    src: url('fonts/bpg-arial-webfont.eot'); /* IE9 Compat Modes */
-    src: url('fonts/bpg-arial-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('fonts/bpg-arial-webfont.woff2') format('woff2'), /* Super Modern Browsers */
-         url('fonts/bpg-arial-webfont.woff') format('woff'), /* Pretty Modern Browsers */
-         url('fonts/bpg-arial-webfont.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('fonts/bpg-arial-webfont.svg#bpg_arialregular') format('svg'); /* Legacy iOS */
+    src: url('fonts/bpg-arial-webfont.eot');
+    /* IE9 Compat Modes */
+    src: url('fonts/bpg-arial-webfont.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('fonts/bpg-arial-webfont.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('fonts/bpg-arial-webfont.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('fonts/bpg-arial-webfont.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('fonts/bpg-arial-webfont.svg#bpg_arialregular') format('svg');
+    /* Legacy iOS */
 }
 /*Common*/
+
 html {
     height: 100%;
 }
@@ -28,7 +41,7 @@ body {
     font-size: 14px;
     margin: 0;
     padding: 0;
-    color: #000000;
+    color: #919191;
 }
 h2 {
     font-family: "BPG Nino Medium Caps", sans-serif;
@@ -39,55 +52,99 @@ h2 {
 .container {
     min-height: 100%;
     margin: 0 auto;
-    width: 360px;
-    /* padding-top: 25px; */
-    /* padding-bottom: 135px; */
+    width: 357px;
 }
-.window {
-    /*padding: 12px 36px 18px 36px;*/
+.offer {
+    width: 357px;
 }
-
+.cvc-hover {
+    display: inline-flex;
+    padding: 10px 10px 15px 10px;
+    align-items: center;
+    visibility: hidden;
+}
+.second-section {
+    display: inline-flex;
+    padding: 30px 20px 20px 20px;
+}
+.logo {
+    width: 357px;
+    height: 56px;
+    margin-bottom: 25px;
+}
+.logo-img {
+    background: url(ebg_logo.png) no-repeat center;
+    height: 56px;
+    width: 151px;
+    margin: 0 auto;
+    z-index: 1;
+}
+.verify-wrapper {
+    margin-top: 20px;
+    height: 60px;
+}
+.verify-img {
+    background: url(verify.png) no-repeat center;
+    height: 56px;
+    width: 151px;
+    margin: 0 auto;
+    z-index: 1;
+}
+.btn-group {
+    padding: 0px 20px;
+}
 input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    font-family: "BPG Nino Medium Caps", sans-serif;
+    font-family: "BPG Arial", sans-serif;
     font-size: 14px;
     width: 100%;
-    height: 34px;
-    text-indent:10px;
+    height: 30px;
+    border-radius: 5px;
+    text-indent: 10px;
     box-sizing: border-box;
-    border: none;
+    border: 1px solid rgba(85, 85, 85, 0.2);
     transition-duration: 0.3s;
     transition-property: border-color, box-shadow;
     outline: none;
-    background-color: #fff;
     position: relative;
 }
-.empty {
-    background-color: transparent;
+.empty {}
+.center {
+    text-align: center;
 }
-.center {text-align: center;}
-.right {text-align: right;}
-.red {color:#dc0606;}
-.green {color:#00A000;}
-.bold {font-weight: bold;}
-
+.right {
+    text-align: right;
+}
+.red {
+    color: #dc0606;
+}
+.green {
+    color: #00A000;
+}
+.bold {
+    font-weight: bold;
+}
+.input-group {
+    padding: 20px 20px 0px 20px;
+}
 input.empty:focus {
     background-color: rgba(255, 255, 255, 0.75);
 }
 .placeholder {
-    height: 34px;
-    width:  150px;
-    display:  block;
-    line-height: 32px;
-    font-size: 14px;
+    width: 100%;
+    display: block;
+    height: 25px;
+    font-size: 12px;
+    font-family: "BPG Arial", sans-serif;
+    background: transparent;
 }
 input:focus {
     border: 1px solid #f3751b;
 }
-
 /*Checkbox*/
+
 input[type=checkbox] {
     position: absolute;
     width: initial;
@@ -100,7 +157,7 @@ input[type=checkbox]+label:before {
     width: 16px;
     height: 16px;
     border: 1px solid #ccc;
-    background: #fff  no-repeat center center;
+    background: #fff no-repeat center center;
     content: '';
     transition: all 0.3s;
 }
@@ -118,11 +175,18 @@ a {
 a:hover {
     text-decoration: underline;
 }
-#pan,#month,#year,#cvc{
-    border: 1px solid #ccc;
+#cvv {}
+#expiry {
+    width: 100%;
 }
-
+#cvv, #expiry {
+    padding: 0;
+}
+.expiration {
+    display: inline-flex;
+}
 /*Header*/
+
 .header {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     padding: 15px 0;
@@ -132,13 +196,12 @@ a:hover {
     height: 52px;
     padding-bottom: 16px;
 }
-
 /*Order Info*/
+
 .order {
     position: relative;
     font-size: 14px;
 }
-
 .description {
     padding-top: 15px;
 }
@@ -154,26 +217,23 @@ a:hover {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 .amount {
     vertical-align: middle;
 }
 .desc {
     vertical-align: top;
 }
-
 .merchant-info .purchase-info {
-    width:522px;
+    width: 522px;
 }
 .merchant-order {
-    display:inline-block;
-    width:100%;
+    display: inline-block;
+    width: 100%;
 }
-
 .bank-logo {
     position: absolute;
-    display:inline-block;
-    right:0;
+    display: inline-block;
+    right: 0;
     width: 60px;
     height: 53px;
     background-color: #fff;
@@ -184,7 +244,6 @@ a:hover {
 .merchant-title, .merchant-url {
     width: 248px;
 }
-
 .merchant-url {
     white-space: nowrap;
     overflow-x: hidden;
@@ -199,7 +258,7 @@ a:hover {
     text-overflow: ellipsis;
     padding-bottom: 10px;
 }
-.merchant-title:hover .hint{
+.merchant-title:hover .hint {
     display: block;
 }
 .hint {
@@ -216,16 +275,15 @@ a:hover {
     opacity: 0.8;
 }
 .hint:before {
-     position: absolute;
-     width: 0;
-     height: 0;
-     content: '';
-     border: 6px solid transparent;
-     border-bottom-color: #000;
-     margin-top: -20px;
-     margin-left: 10px;
- }
-
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: '';
+    border: 6px solid transparent;
+    border-bottom-color: #000;
+    margin-top: -20px;
+    margin-left: 10px;
+}
 .purchase-amount {
     font-size: 36px;
     font-weight: bold;
@@ -241,64 +299,54 @@ a:hover {
     white-space: nowrap;
     vertical-align: middle;
 }
-.purchase-description:hover .hint{
-     display: block;
- }
-
-
+.purchase-description:hover .hint {
+    display: block;
+}
 /*Payment Form*/
+
 .payment-form {
     margin: 0 auto;
     padding: 0;
 }
-
-
 /*Card*/
 
 .card-front {
     z-index: 2;
-    margin-top: 36px;
 }
 .card-front {
-    width: 360px;
-    height: 280px;
+    width: 357px;
     position: relative;
+    border-radius: 5px;
+    border: 1px solid rgba(112, 112, 112, 0.2);
     box-sizing: border-box;
+    background: #f5f5f5;
 }
-
 .expiry {
     margin-bottom: 21px;
 }
 .brand-logo {
     background: url(logo-pay-system.png) no-repeat center;
-    padding: 4px 9px 12px 0;
-    height: 34px;
-    width: 91px;
+    height: 29px;
+    width: 151px;
     margin-left: auto;
     transition: all 0.3s;
-    position: absolute;
-    right: 0;
-    top: 27px;
-    z-index:1;
+    z-index: 1;
 }
 .amex, .mastercard, .visa {
-    width: 30px;
+    width: 46;
 }
-
 .mastercard {
-    background-position: 7px;
+    background-position: -52px;
 }
 .visa {
-    background-position: -28px;
+    background-position: 0px;
 }
 .amex {
-    background-position: -60px;
+    background-position: -106px;
 }
-
 .input-label {
     display: none;
 }
-
 .input {
     display: inline-block;
     font-family: "BPG Nino Medium Caps", sans-serif;
@@ -307,77 +355,59 @@ a:hover {
     height: 34px;
     line-height: 34px;
 }
-
 .cvc {
-    display: inline-block;
-    vertical-align: top;
+    padding-left: 22px;
 }
-
 #cvc-input {
     vertical-align: top;
 }
-
-#month-input, #year-input, #cvc-input  {
-    width: 99px;
+#month-input, #year-input, #cvc-input {
+    width: 45px;
 }
-.cvc-hint{
+.cvc-hint {
     cursor: pointer;
-}
-.cvc-hint:hover + .cvc-hover{
-    display: inline-block !important;
-}
-.cvc-hover{
-    display: none;
-    margin-left: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
 }
 .cvc-info {
-    display: inline-block;
-    font-family: 'BPG Arial',sans-serif;
-    width: 200px;
-    /* padding: 0 10px; */
-    line-height: 12px;
-    font-size: 10px;
+    font-family: 'BPG Arial', sans-serif;
+    font-size: 11px;
     color: #0f1727;
 }
-.cvc-info-image{
+.cvc-info-image {
     background: url(cvc.png) no-repeat center;
-    height: 37px;
-    width: 57px;
-    /* margin-left: 10px; */
-    z-index:1;
-    margin-top: 8px;
+    height: 42px;
+    width: 74px;
+    z-index: 1;
 }
 .save-card-info {
     display: none;
-    clear:both;
+    clear: both;
     margin: 20px auto;
     max-width: 480px;
     line-height: 150%;
     color: #999;
     transition: all 0.3s;
-    text-align:center;
+    text-align: center;
     margin: 20px auto 0 auto;
     font-size: 14px;
 }
-
 #cardholdername-input {
     width: 100%;
 }
-
 #cardholdersname-input {
     width: 147px;
     margin-left: 16px;
 }
-
 /*Inputs*/
+
 .form-input {
     box-sizing: border-box;
-    display: inline-block;
     position: relative;
 }
 .slash {
-    display: inline-block;
-    margin: 0 16px;
+    margin: 5px 7px;
     font-size: 15px;
 }
 #pan-input {
@@ -387,18 +417,12 @@ a:hover {
     padding-top: 0;
     transition: all 0.7s;
 }
-
-#cvc-input, #pan-input, #month-input, #year-input, #cardholdername-input, #cardholdersname-input {
-    background-color: #fff;
-}
-
+#cvc-input, #pan-input, #month-input, #year-input, #cardholdername-input, #cardholdersname-input {}
 /*Buttons*/
-
 
 .btn_single {
     text-align: right;
 }
-
 .btn {
     font-family: "BPG Nino Medium Caps", sans-serif;
     display: inline-block;
@@ -419,7 +443,6 @@ a:hover {
     text-align: center;
     line-height: 14px;
 }
-
 .btn:hover, .btn:focus {
     opacity: 0.8;
 }
@@ -427,23 +450,21 @@ a:hover {
     background-color: #9fd745;
 }
 .btn-back {
-    width:140px;
+    width: 140px;
     line-height: 14px;
     padding-top: 4px;
 }
-
 .btn-email {
-    width:140px;
-    height:37px;
-    margin-left:-8px;
-    float:right;
+    width: 140px;
+    height: 37px;
+    margin-left: -8px;
+    float: right;
 }
 .btn:disabled {
     background-color: #ccc;
 }
-
-
 /*Errors*/
+
 input.error {
     border-color: #ff4a4a;
 }
@@ -479,10 +500,18 @@ label.error:before {
     margin-top: -19px;
     margin-left: -7px;
 }
-.formerror{padding-top:0.4em;padding-bottom:0.4em;border-bottom:1px dashed #CCCCCC;margin-bottom:0.5em}
-.paramerror{color:#dc0606;font-weight:bold}
-
+.formerror {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px dashed #CCCCCC;
+    margin-bottom: 0.5em
+}
+.paramerror {
+    color: #dc0606;
+    font-weight: bold
+}
 /*Result*/
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -524,6 +553,7 @@ h2 {
     text-align: center;
 }
 /*Other*/
+
 .payment-info {
     margin: 0 auto;
 }
@@ -531,9 +561,9 @@ h2 {
     max-width: 170px;
     text-align: center;
 }
-
-.only_text {margin: 20px 0;}
-
+.only_text {
+    margin: 20px 0;
+}
 .email-form {
     padding-top: 10px;
 }
@@ -543,32 +573,32 @@ h2 {
     padding: 16px 36px 30px 36px;
     color: #000;
 }
-
 .email input[name=email] {
     width: 170px;
     height: 37px;
-    border-color:#75c0ff;
+    border-color: #75c0ff;
 }
-.email label{
+.email label {
     color: #999;
     background-color: #fff;
 }
-.email .form-input{
+.email .form-input {
     background-color: #fff;
 }
 .email_input_block {
     margin-top: 10px;
 }
-
-#pay-bonus-wrapper, #pay-bonus-msg-wrapper  {display: none;}
+#pay-bonus-wrapper, #pay-bonus-msg-wrapper {
+    display: none;
+}
 #pay-bonus-wrapper {
     margin-top: 12px;
 }
 #pay-bonus-msg-wrapper {
     margin-top: 5px;
 }
-
 /*Footer*/
+
 .footer {
     margin: 0 auto;
     text-align: center;
@@ -579,21 +609,23 @@ h2 {
     line-height: 130%;
     color: #999;
 }
-.secure-logo img{
+.secure-logo img {
     width: 305px;
     max-height: 22px;
     margin: 17px 0 17px 0;
 }
-.secure-logo img, .footer{
+.secure-logo img, .footer {
     max-width: 386px;
 }
-
 /*wo CARDHOLRER*/
+
 /*
 #cardholder {display: none;}
 #expiry {padding-top: 20px;}
 */
+
 /*wo LOGO*/
+
 /*.bank-logo {
     display: none;
 }
@@ -601,87 +633,102 @@ h2 {
     width: 100% !important;
 }
 */
+
 /*loading*/
-#warningGradientOuterBarG{
-    height:14px;
-    width:212px;
-    border:1px solid rgb(0,0,0);
-    overflow:hidden;
-    background-color:rgb(255,255,255);
-    margin:auto;
-    background: gradient(linear, 0% 0%, 0% 100%, from(rgb(255,255,255)), to(rgb(0,0,0)));
-    background: -o-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,255,255)), to(rgb(0,0,0)));
-    background: -ms-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,255,255)), to(rgb(0,0,0)));
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,255,255)), to(rgb(0,0,0)));
-    background: -moz-gradient(linear, 0% 0%, 0% 100%, from(rgb(255,255,255)), to(rgb(0,0,0)));
-    background: linear-gradient(top, rgb(255,255,255), rgb(243,117,27));
-    background: -o-linear-gradient(top, rgb(255,255,255), rgb(243,117,27));
-    background: -ms-linear-gradient(top, rgb(255,255,255), rgb(243,117,27));
-    background: -webkit-linear-gradient(top, rgb(255,255,255), rgb(243,117,27));
-    background: -moz-linear-gradient(top, rgb(255,255,255), rgb(243,117,27));
-}
 
-.warningGradientBarLineG{
-    background-color:rgb(255,255,255);
-    float:left;
-    width:14px;
-    height:117px;
-    margin-right:23px;
-    margin-top:-27px;
-    transform:rotate(45deg);
-    -o-transform:rotate(45deg);
-    -ms-transform:rotate(45deg);
-    -webkit-transform:rotate(45deg);
-    -moz-transform:rotate(45deg);
+#warningGradientOuterBarG {
+    height: 14px;
+    width: 212px;
+    border: 1px solid rgb(0, 0, 0);
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    background: gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(0, 0, 0)));
+    background: -o-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(0, 0, 0)));
+    background: -ms-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(0, 0, 0)));
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(0, 0, 0)));
+    background: -moz-gradient(linear, 0% 0%, 0% 100%, from(rgb(255, 255, 255)), to(rgb(0, 0, 0)));
+    background: linear-gradient(top, rgb(255, 255, 255), rgb(243, 117, 27));
+    background: -o-linear-gradient(top, rgb(255, 255, 255), rgb(243, 117, 27));
+    background: -ms-linear-gradient(top, rgb(255, 255, 255), rgb(243, 117, 27));
+    background: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(243, 117, 27));
+    background: -moz-linear-gradient(top, rgb(255, 255, 255), rgb(243, 117, 27));
 }
-
-.warningGradientAnimationG{
-    width:230px;
-    animation-name:warningGradientAnimationG;
-    -o-animation-name:warningGradientAnimationG;
-    -ms-animation-name:warningGradientAnimationG;
-    -webkit-animation-name:warningGradientAnimationG;
-    -moz-animation-name:warningGradientAnimationG;
-    animation-duration:1.5s;
-    -o-animation-duration:1.5s;
-    -ms-animation-duration:1.5s;
-    -webkit-animation-duration:1.5s;
-    -moz-animation-duration:1.5s;
-    animation-iteration-count:infinite;
-    -o-animation-iteration-count:infinite;
-    -ms-animation-iteration-count:infinite;
-    -webkit-animation-iteration-count:infinite;
-    -moz-animation-iteration-count:infinite;
-    animation-timing-function:linear;
-    -o-animation-timing-function:linear;
-    -ms-animation-timing-function:linear;
-    -webkit-animation-timing-function:linear;
-    -moz-animation-timing-function:linear;
+.warningGradientBarLineG {
+    background-color: rgb(255, 255, 255);
+    float: left;
+    width: 14px;
+    height: 117px;
+    margin-right: 23px;
+    margin-top: -27px;
+    transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
 }
-
-@keyframes warningGradientAnimationG{
-    0%{margin-left:0px;}
-    100%{margin-left:-37px}
+.warningGradientAnimationG {
+    width: 230px;
+    animation-name: warningGradientAnimationG;
+    -o-animation-name: warningGradientAnimationG;
+    -ms-animation-name: warningGradientAnimationG;
+    -webkit-animation-name: warningGradientAnimationG;
+    -moz-animation-name: warningGradientAnimationG;
+    animation-duration: 1.5s;
+    -o-animation-duration: 1.5s;
+    -ms-animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    -ms-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    -ms-animation-timing-function: linear;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
 }
-
-@-o-keyframes warningGradientAnimationG{
-    0%{margin-left:0px;}
-    100%{margin-left:-37px;}
+@keyframes warningGradientAnimationG {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -37px
+    }
 }
-
-@-ms-keyframes warningGradientAnimationG{
-    0%{margin-left:0px;}
-    100%{margin-left:-37px;}
+@-o-keyframes warningGradientAnimationG {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -37px;
+    }
 }
-
-@-webkit-keyframes warningGradientAnimationG{
-    0%{margin-left:0px;}
-    100%{margin-left:-37px;}
+@-ms-keyframes warningGradientAnimationG {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -37px;
+    }
 }
-
-@-moz-keyframes warningGradientAnimationG{
-    0%{margin-left:0px;}
-    100%{margin-left:-37px;}
+@-webkit-keyframes warningGradientAnimationG {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -37px;
+    }
+}
+@-moz-keyframes warningGradientAnimationG {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -37px;
+    }
 }
 /*loading END*/
 
@@ -693,7 +740,7 @@ h2 {
         min-height: 0;
         width: 90% !important;
         margin: 0 auto !important;
-        padding:0 !important;
+        padding: 0 !important;
     }
     .payment-info {
         border-top: 2px solid #999;

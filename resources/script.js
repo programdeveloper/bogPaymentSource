@@ -162,4 +162,10 @@ $(document).ready(function() {
         }
     });
 
+    $(".cvc-hint").hover(function(){
+        $(".cvc-hover").css("visibility","visible");
+    },function(){
+        $(".cvc-hover").css("visibility","hidden");
+    });
+
 });
