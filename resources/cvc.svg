@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73 41.063">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c4c4c4;
+      }
+
+      .cls-2 {
+        fill: #4e4e4e;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4, .cls-7 {
+        fill: none;
+      }
+
+      .cls-4 {
+        stroke: #ea767a;
+      }
+
+      .cls-5 {
+        fill: #5c5c5c;
+        font-size: 8px;
+        font-family: BPGArial, BPG Arial;
+      }
+
+      .cls-6 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_7946" data-name="Group 7946" transform="translate(-262.5 -391.969)">
+    <rect id="Rectangle_1222" data-name="Rectangle 1222" class="cls-1" width="73" height="41.063" rx="5" transform="translate(262.5 391.969)"/>
+    <rect id="Rectangle_1223" data-name="Rectangle 1223" class="cls-2" width="73" height="9.777" transform="translate(262.5 399.138)"/>
+    <rect id="Rectangle_1224" data-name="Rectangle 1224" class="cls-3" width="40.625" height="9.125" transform="translate(266.411 416.737)"/>
+    <g id="Rectangle_1225" data-name="Rectangle 1225" class="cls-4" transform="translate(312 413)">
+      <rect class="cls-6" width="20" height="16" rx="3"/>
+      <rect class="cls-7" x="0.5" y="0.5" width="19" height="15" rx="2.5"/>
+    </g>
+    <text id="_123" data-name="123" class="cls-5" transform="translate(315 424)"><tspan x="0" y="0">123</tspan></text>
+  </g>
+</svg>
