@@ -185,7 +185,7 @@
                                                        data-msg-pan="@ERROR_INC_PAN@"
                                                        data-msg-minlength="@ERROR_MINLENGTH_15@"
                                                        tabindex="1"
-                                                       maxlength="23" aria-required="true"/>
+                                                       maxlength="19" aria-required="true"/>
                                                 <span class="error-container"></span>
                                             </xsl:otherwise>
                                         </xsl:choose>

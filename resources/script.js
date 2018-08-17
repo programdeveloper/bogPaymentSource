@@ -9,7 +9,7 @@ $(document).ready(function() {
     $csc.mask('0000');
     $pan.on('keypress', checkchar);
     $('#pan_masked').on('input paste', detectBrand);
-    $pan.on('input paste', detectBrand).mask('0000 0000 0000 0000 000');
+    $pan.on('input paste', detectBrand).mask('0000 0000 0000 0000');
     $('input').on('input', emptyMarker).trigger('input');
     $('input').on('keyup', jump);
 
@@ -156,8 +156,6 @@ $(document).ready(function() {
             error.appendTo(element.next('.error-container'));
         },
         submitHandler: function (form) {
-            $("#pan").val("");
-            $("#pan_masked").val("");
             form.submit();
         }
     });
